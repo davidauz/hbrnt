@@ -39,10 +39,14 @@ public class EntityManagerTests {
 	public void saveEntity() {
 		try {
 			tr.begin();
-			Mayor mayor = new Mayor(null, "Olivia", "Chow", 1957, null);
-			City city = new City(null, null, "Toronto", 416, "Diversity Our Strength");
-			em.persist(mayor);
-			em.persist(city);
+			Mayor OliviaChow = new Mayor(null, "Olivia", "Chow", 1957, null);
+			City Toronto = new City(null, null, "Toronto", 416, "Diversity Our Strength");
+			em.persist(OliviaChow);
+			em.persist(Toronto);
+			System.out.println(OliviaChow);
+			System.out.println(Toronto);
+			Toronto.setCityMayor(OliviaChow);
+			System.out.println(Toronto);
 			tr.commit();
 		}catch (Exception e) {
 			// If an error occurs, rollback the transaction

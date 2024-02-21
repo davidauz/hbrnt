@@ -27,6 +27,6 @@ public class City {
 	@Column private String motto;
 
 	public String toString(){
-		return "City:"+name+", id="+id+", zip="+zipcode+", motto '"+motto+"', Mayor "+ cityMayor.toString();
+		return "City:"+name+", id="+id+", zip="+zipcode+", motto '"+motto+"', Mayor "+ (null==cityMayor?"none!":cityMayor.toString());
 	};
 }

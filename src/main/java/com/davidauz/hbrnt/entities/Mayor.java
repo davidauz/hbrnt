@@ -17,7 +17,7 @@ public class Mayor {
 
 	@Column public String firstName;
 	@Column public String familyName;
-	@Column public double bornYear;
+	@Column public int bornYear;
 
 	@OneToOne
 	@JoinColumn(name= "city_id")

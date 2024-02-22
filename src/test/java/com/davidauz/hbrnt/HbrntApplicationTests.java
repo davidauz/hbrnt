@@ -1,7 +1,7 @@
 package com.davidauz.hbrnt;
 
 import com.davidauz.hbrnt.entities.City;
-import com.davidauz.hbrnt.entities.ExampleEntity;
+import com.davidauz.hbrnt.entities.ExamplePojo;
 import com.davidauz.hbrnt.entities.Mayor;
 import org.hibernate.query.Query;
 import org.junit.jupiter.api.AfterAll;
@@ -50,18 +50,18 @@ class HbrntApplicationTests {
 			tr = session.beginTransaction();
 
 			// create
-			ExampleEntity exampleEntity = new ExampleEntity();
+			ExamplePojo examplePojo = new ExamplePojo();
 			// this is now TRANSIENT (i.e. not saved yet)
 
 			//save
-			session.save(exampleEntity);
+			session.save(examplePojo);
 			// the object is now  Persistent (Managed by the current running Persistence Context) i.e. it has been saved to database
 
 			// Commit transaction
 			tr.commit();
 
 			// Assert that the entity has been assigned an ID
-			assertNotNull(exampleEntity.getId());
+			assertNotNull(examplePojo.getId());
 		} catch (Exception e) {
 			// Rollback transaction if an error occurs
 			if (tr != null) {

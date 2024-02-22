@@ -19,7 +19,7 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Mapping files or annotated classes (if using annotations) -->
-        <mapping class="com.davidauz.hbrnt.entities.ExampleEntity"/>
+        <mapping class="com.davidauz.hbrnt.entities.ExamplePojo"/>
         <mapping class="com.davidauz.hbrnt.entities.City"/>
         <mapping class="com.davidauz.hbrnt.entities.Mayor"/>
 

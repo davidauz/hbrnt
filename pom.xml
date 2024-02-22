@@ -135,6 +135,35 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.datanucleus</groupId>
+				<artifactId>datanucleus-maven-plugin</artifactId>
+				<version>5.2.1</version>
+				<configuration>
+					<log4jConfiguration>${basedir}/log4j.properties</log4jConfiguration>
+					<verbose>true</verbose>
+				</configuration>
+				<executions>
+					<execution>
+						<id>process-classes</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>enhance</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>process-test-classes</id>
+						<phase>process-test-classes</phase>
+						<goals>
+							<goal>enhance</goal>
+						</goals>
+						<configuration>
+							<metadataDirectory>${project.build.testOutputDirectory}</metadataDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

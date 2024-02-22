@@ -35,6 +35,10 @@
             <property name="javax.jdo.option.ConnectionPassword" value=""/>
             <property name="javax.jdo.PersistenceManagerFactoryClass" value="org.datanucleus.api.jdo.JDOPersistenceManagerFactory"/>
             <property name="javax.jdo.option.PersistenceUnitName" value="myPersistenceUnit"/>
+            <property name="datanucleus.schema.autoCreateTables" value="true"/>
+<!--        <property name="javax.jdo.option.ConnectionFactory2" value="jdbc:h2:~/mydatabase;createDatabaseIfNotExist=true"/>
+out of luck here: in-memory databases don't have a file system representation.
+-->
         </properties>
     </persistence-unit>
 </persistence>

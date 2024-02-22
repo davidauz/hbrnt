@@ -3,11 +3,13 @@ package com.davidauz.hbrnt.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 
+import javax.jdo.annotations.PersistenceCapable;
 import java.util.Random;
 
 @Entity
 @Table
 @Getter
+@PersistenceCapable // for PersistenceManager
 public class ExamplePojo {
 	static Random rand = new Random();
 

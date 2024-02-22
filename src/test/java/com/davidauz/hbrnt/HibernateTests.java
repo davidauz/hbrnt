@@ -15,13 +15,15 @@ import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 
-//using Hibernate directly without JPA
-//Used if  advanced features and optimizations provided by Hibernate that are not available in JPA are required.class
+//using Hibernate directly without JPA (JPA is the specification)
+//Hibernate implements JPA but it is possible to use Hibernate directly without using JPA.
+//Hibernate existed before the JPA specification was introduced, and it offers its own native API for ORM operations.
+//Used if advanced features and optimizations provided by Hibernate that are not available in JPA are required.
 //Hibernate gives full access to its features, optimizations, and integrations with other Hibernate-specific libraries.
 //It provides maximum flexibility and control over your persistence layer.
 //Using Hibernate directly may sacrifice some level of portability.
 // N.B. this reads hibernate.cfg.xml
-class HbrntApplicationTests {
+class HibernateTests {
 
 	private static SessionFactory sessionFactory;
 

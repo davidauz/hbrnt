@@ -15,8 +15,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-//Using PersistenceManager (JDO):
-//Used if JDO is preferred or mandated.
+//Using PersistenceManager (JDO): PersistenceManager is not part of JPA (Java Persistence API).
+//It is instead a core interface provided by the Java Data Objects (JDO) specification, which
+//is an alternative to JPA for object-relational mapping (ORM) in Java applications.
+//It is used if JDO is preferred or mandated.
 //JDO provides features such as transparent persistence, support for object graphs, and a flexible query language.
 //It might be suitable for complex object-oriented models.
 //JDO has a smaller ecosystem compared to JPA: fewer third-party libraries and community resources available.

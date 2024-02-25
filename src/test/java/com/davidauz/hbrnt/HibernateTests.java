@@ -3,6 +3,7 @@ package com.davidauz.hbrnt;
 import com.davidauz.hbrnt.entities.City;
 import com.davidauz.hbrnt.entities.ExamplePojo;
 import com.davidauz.hbrnt.entities.Mayor;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,6 +14,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.util.Arrays;
 import java.util.List;
 
 //using Hibernate directly without JPA (JPA is the specification)
@@ -64,6 +66,20 @@ class HibernateTests {
 
 			// Assert that the entity has been assigned an ID
 			assertNotNull(examplePojo.getId());
+
+// optional
+//			String sqlQuery = "SHOW tables";
+//			NativeQuery query = session.createNativeQuery(sqlQuery);
+//			List<Object[]> tables = query.list();
+// see what tables Hibernate just created
+			String sqlQuery = "SHOW COLUMNS FROM EXAMPLEPOJO";
+			NativeQuery query = session.createNativeQuery(sqlQuery);
+			List<Object[]> columns = query.list();
+
+			columns.stream()
+			.forEach(c->System.out.println("Column "+c[0]+": "+c[1]))
+			;
+
 		} catch (Exception e) {
 			// Rollback transaction if an error occurs
 			if (tr != null) {
@@ -102,7 +118,7 @@ class HibernateTests {
 
 			System.out.println(NewYork);
 
-			session.save(StephanieOrman); // Stephanie gets to be saved by herself
+			session.persist(StephanieOrman);
 
 			tr.commit(); // flush to database
 

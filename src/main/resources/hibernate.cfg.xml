@@ -23,7 +23,10 @@
         <mapping class="com.davidauz.hbrnt.entities.Mayor"/>
 
         <!-- Mapping for Implicit Polymorphism tests -->
-        <mapping class="com.davidauz.hbrnt.entities.inheritance.FurnitureSofa"/>
+        <mapping class="com.davidauz.hbrnt.entities.ImplicitPolymorphism.FurnitureSofa"/>
+        <mapping class="com.davidauz.hbrnt.entities.ImplicitPolymorphism.FurnitureTable"/>
+        <mapping class="com.davidauz.hbrnt.entities.TablePerClass.Ginseng"/>
+        <mapping class="com.davidauz.hbrnt.entities.TablePerClass.Oak"/>
 
     </session-factory>
 </hibernate-configuration>

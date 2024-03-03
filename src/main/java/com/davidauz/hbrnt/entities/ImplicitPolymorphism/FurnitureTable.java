@@ -1,4 +1,4 @@
-package com.davidauz.hbrnt.entities.inheritance;
+package com.davidauz.hbrnt.entities.ImplicitPolymorphism;
 
 import com.davidauz.hbrnt.enums.TableShapes;
 import jakarta.persistence.Column;

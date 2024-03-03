@@ -1,4 +1,4 @@
-package com.davidauz.hbrnt.entities.inheritance;
+package com.davidauz.hbrnt.entities.ImplicitPolymorphism;
 
 import jakarta.persistence.*;
 import lombok.Getter;

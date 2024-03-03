@@ -1,7 +1,6 @@
-package com.davidauz.hbrnt.entities.inheritance;
+package com.davidauz.hbrnt.entities.ImplicitPolymorphism;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;

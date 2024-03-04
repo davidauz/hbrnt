@@ -1,4 +1,4 @@
-package com.davidauz.hbrnt;
+package com.davidauz.hbrnt.HibernateTests;
 
 import com.davidauz.hbrnt.entities.ImplicitPolymorphism.FurnitureSofa;
 import com.davidauz.hbrnt.entities.ImplicitPolymorphism.FurnitureTable;

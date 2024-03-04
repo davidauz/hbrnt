@@ -1,4 +1,4 @@
-package com.davidauz.hbrnt;
+package com.davidauz.hbrnt.HibernateTests;
 
 import com.davidauz.hbrnt.entities.City;
 import com.davidauz.hbrnt.entities.ExamplePojo;
@@ -14,7 +14,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import java.util.Arrays;
 import java.util.List;
 
 //using Hibernate directly without JPA (JPA is the specification)
@@ -25,7 +24,7 @@ import java.util.List;
 //It provides maximum flexibility and control over your persistence layer.
 //Using Hibernate directly may sacrifice some level of portability.
 // N.B. this reads hibernate.cfg.xml
-class HibernateTests {
+class HibernateSimpleTests {
 
 	private static SessionFactory sessionFactory;
 

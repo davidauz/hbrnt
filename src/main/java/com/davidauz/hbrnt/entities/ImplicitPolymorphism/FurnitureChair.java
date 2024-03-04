@@ -1,6 +1,5 @@
 package com.davidauz.hbrnt.entities.ImplicitPolymorphism;
 
-import com.davidauz.hbrnt.enums.ChairMaterials;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -8,6 +7,13 @@ import lombok.Getter;
 @Table
 @Getter
 public class FurnitureChair extends FurnitureCanSitOn{
+	public enum ChairMaterials
+	{	WOOD
+	,	PLASTIC
+	,	METAL
+	;
+	}
+
 	{ accomodating_people=1; } // instance initializer block
 	@Column private ChairMaterials material;
 }

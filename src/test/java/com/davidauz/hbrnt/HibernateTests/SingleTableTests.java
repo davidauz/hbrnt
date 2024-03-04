@@ -1,4 +1,4 @@
-package com.davidauz.hbrnt;
+package com.davidauz.hbrnt.HibernateTests;
 
 import com.davidauz.hbrnt.entities.TablePerClass.Ginseng;
 import com.davidauz.hbrnt.entities.TablePerClass.Oak;
@@ -49,7 +49,6 @@ public class SingleTableTests {
 
 			tr.commit(); // flush to database
 
-
 			String sqlQuery = "SHOW COLUMNS FROM PLANT";
 			NativeQuery query = session.createNativeQuery(sqlQuery);
 			List<Object[]> columns = query.list();
@@ -66,7 +65,7 @@ public class SingleTableTests {
 //Column TRUNK_HEIGHT: FLOAT(53) from Tree
 //Column N_ACORNS: INTEGER from Oak
 //N.B. Hibernate creates a common table for all entities defined with InheritanceType.SINGLE_TABLE
-//but thre set of column wil be the absolutely minimum necessary, i.e. if in the hibernate.cfg.xml
+//but the set of columns wil be the absolutely minimum necessary, i.e. if in the hibernate.cfg.xml
 //there are only Ginseng and Oak and nothing else, there won't be any column from the other
 //classes in the hierarchy: no n_of_strawberries from Strawberry, no RoseColor from Rose.
 		}catch(Exception e){

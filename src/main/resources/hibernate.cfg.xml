@@ -27,6 +27,8 @@
         <mapping class="com.davidauz.hbrnt.entities.ImplicitPolymorphism.FurnitureTable"/>
         <mapping class="com.davidauz.hbrnt.entities.TablePerClass.Ginseng"/>
         <mapping class="com.davidauz.hbrnt.entities.TablePerClass.Oak"/>
+        <mapping class="com.davidauz.hbrnt.entities.JoinedUnions.Dolphin"/>
+        <mapping class="com.davidauz.hbrnt.entities.JoinedUnions.Cat"/>
 
     </session-factory>
 </hibernate-configuration>

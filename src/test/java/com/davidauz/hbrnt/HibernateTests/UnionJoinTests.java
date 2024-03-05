@@ -47,7 +47,7 @@ public class UnionJoinTests {
 
 			Cat cat = new Cat();
 			cat.setVariety(Cat.catVariety.MANX);
-			cat.setTail_length(5);
+			cat.setTail_length(2);
 			session.save(cat);
 
 			tr.commit(); // flush to database
@@ -93,11 +93,28 @@ public class UnionJoinTests {
 // from	Dolphin d1_0
 // join	Cetacean d1_1 on d1_0.Id=d1_1.Id
 // join	Mammal d1_2 on d1_0.Id=d1_2.Id
-		List<Dolphin> results = query.list();
-		results.stream()
+		List<Dolphin> dolphins = query.list();
+		dolphins.stream()
 		.forEach(entity -> {
 		System.out.println(entity.toString());
 		});
+
+		hql = "FROM Cat";
+		query = session.createQuery(hql);
+//select c1_0.Id
+// ,	c1_2.environ
+// ,	c1_1.is_cuddly
+// ,	c1_0.tail_length
+// ,	c1_0.variety
+// from Cat c1_0
+// join Feline c1_1 on c1_0.Id=c1_1.Id
+// join Mammal c1_2 on c1_0.Id=c1_2.Id
+		List<Cat> cats = query.list();
+		cats.stream()
+		.forEach(entity -> {
+		System.out.println(entity.toString());
+		});
+
 		session.close();
 		}
 

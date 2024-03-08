@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -21,6 +23,10 @@
 		<javax.jdo.version>2.3-eb</javax.jdo.version>
 		<datanucleus-api-jdo.version>6.0.2</datanucleus-api-jdo.version>
 		<datanucleus-rdbms.version>6.0.7</datanucleus-rdbms.version>
+		<SprngbtStrtTst>3.2.3</SprngbtStrtTst>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+		<JUnitversion>4.13.2</JUnitversion>
 	</properties>
 	<dependencies>
 
@@ -113,11 +119,28 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${JUnitversion}</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>${SprngbtStrtTst}</version>
+			<scope>test</scope>
+		</dependency>
+
 
 	</dependencies>
 

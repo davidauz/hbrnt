@@ -18,9 +18,9 @@
         <property name="hibernate.show_sql">true</property>
 
         <!-- Mapping files or annotated classes (using annotations) -->
-        <mapping class="com.davidauz.persManager.ExamplePojo"/>
-        <mapping class="com.davidauz.entManager.entities.City"/>
-        <mapping class="com.davidauz.entManager.entities.Mayor"/>
+        <mapping class="com.davidauz.hibrntTests.entities.ExamplePojo"/>
+        <mapping class="com.davidauz.hibrntTests.entities.City"/>
+        <mapping class="com.davidauz.hibrntTests.entities.Mayor"/>
 
         <!-- Mapping for Implicit Polymorphism tests -->
         <mapping class="com.davidauz.hibrntTests.entities.ImplicitPolymorphism.FurnitureSofa"/>

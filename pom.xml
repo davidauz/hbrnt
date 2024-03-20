@@ -4,7 +4,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
-	<parent>
+    <modules>
+        <module>PersistenceManagerTests</module>
+        <module>EntityManagerTests</module>
+        <module>HibernateTests</module>
+        <module>SpringBootTests</module>
+    </modules>
+    <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.2</version>

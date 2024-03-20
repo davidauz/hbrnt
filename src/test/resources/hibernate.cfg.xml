@@ -6,7 +6,7 @@
         <!-- Database connection settings for H2 in-memory database -->
         <property name="hibernate.connection.driver_class">org.h2.Driver</property>
         <property name="hibernate.connection.url">jdbc:h2:mem:test</property>
-        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.username">GOZO</property>
         <property name="hibernate.connection.password"></property> <!-- No password for H2 in-memory database -->
 
         <!-- Hibernate dialect for H2 -->

@@ -18,4 +18,39 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.datanucleus/javax.jdo -->
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>javax.jdo</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.datanucleus/datanucleus-core for the PersistenceManager examples-->
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-core</artifactId>
+            <version>${datanucleus.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.datanucleus/datanucleus-api-jdo -->
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-api-jdo</artifactId>
+            <version>${datanucleus-api-jdo.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.jdo/jdo2-api
+        a fully compliant implementation of the Java Data Objects (JDO) specification
+        -->
+        <dependency>
+            <groupId>javax.jdo</groupId>
+            <artifactId>jdo2-api</artifactId>
+            <version>${javax.jdo.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.datanucleus/datanucleus-rdbms -->
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-rdbms</artifactId>
+            <version>${datanucleus-rdbms.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>

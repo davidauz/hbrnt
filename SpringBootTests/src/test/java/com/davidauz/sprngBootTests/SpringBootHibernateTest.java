@@ -21,10 +21,8 @@ import java.util.List;
 
 @EnableAutoConfiguration // this tell Spring Boot to guess and configure beans and various Spring
 // related settings based on the libraries and dependencies included in the project
-@ComponentScan(basePackages = { "com.davidauz.hbrnt" })  //yes yes, here is your precious configuration
-@EntityScan(basePackages = { "com.davidauz.hbrnt.entities.JoinedUnions" }) // this way only the
-// necessary tables are created; without @EntityScan and basePackages, all the plants and furniture
-//tables would be created too
+@ComponentScan(basePackages = { "com.davidauz.sprngBootTests" })  //yes yes, here is your precious configuration
+@EntityScan(basePackages = { "com.davidauz.sprngBootTests" })
 @DataJpaTest
 public class SpringBootHibernateTest {
 

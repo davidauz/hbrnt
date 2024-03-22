@@ -1,7 +1,7 @@
 package com.davidauz.hibrntTests;
 
+import com.davidauz.hibrntTests.entities.ImplicitPolymorphism.FurnitureChair;
 import com.davidauz.hibrntTests.entities.ImplicitPolymorphism.FurnitureSofa;
-import com.davidauz.hibrntTests.entities.ImplicitPolymorphism.FurnitureTable;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 //implicit polymorphism: one table for each concrete class
-
+//as specified in the annotation @MappedSuperclass in the root class FurniturePiece
 import java.util.List;
 
 public class ImplicitPolymorphismTests {
@@ -35,10 +35,8 @@ public class ImplicitPolymorphismTests {
 	public void testSofa(){
 		Session session = sessionFactory.openSession();
 
-		// Creating a transaction
 		org.hibernate.Transaction tr = null;
 		try {
-			// Begin transaction
 			tr = session.beginTransaction();
 			FurnitureSofa sofa=new FurnitureSofa();
 //FurnitureSofa <=  FurnitureCanSitOn <= FurniturePiece
@@ -53,9 +51,9 @@ public class ImplicitPolymorphismTests {
 			List<Object[]> columns = query.list();
 
 			columns.stream()
-					.forEach(c->System.out.println("Column "+c[0]+": "+c[1]))
+			.forEach(c->System.out.println("Column "+c[0]+": "+c[1]))
 			;
-//the result is:
+//Hibernate creates only one table that includes all the fields in the derived classes:
 //Column ID: BIGINT from FurniturePiece
 //Column LEGS: INTEGER from FurniturePiece
 //Column NAME: CHARACTER VARYING(255) from FurniturePiece
@@ -75,32 +73,31 @@ public class ImplicitPolymorphismTests {
 
 
 	@Test
-	public void testTable(){
+	public void testChair(){
 		Session session = sessionFactory.openSession();
 
-		// Creating a transaction
 		org.hibernate.Transaction tr = null;
 		try {
-			// Begin transaction
 			tr = session.beginTransaction();
-			FurnitureTable table=new FurnitureTable();
-//FurnitureTable <=  FurniturePiece
-			session.save(table);
-			tr.commit(); // flush to database
+			FurnitureChair chair=new FurnitureChair();
+//FurnitureChair <=  FurnitureCanSitOn <= FurniturePiece
+			session.save(chair);
+			tr.commit();
 
-
-			String sqlQuery = "SHOW COLUMNS FROM FURNITURETABLE";
+			String sqlQuery = "SHOW COLUMNS FROM FURNITURECHAIR";
 			NativeQuery query = session.createNativeQuery(sqlQuery);
 			List<Object[]> columns = query.list();
 
 			columns.stream()
-					.forEach(c->System.out.println("Column "+c[0]+": "+c[1]))
+			.forEach(c->System.out.println("Column "+c[0]+": "+c[1]))
 			;
 //the result is:
 //Column ID: BIGINT from FurniturePiece
 //Column LEGS: INTEGER from FurniturePiece
-//Column NAME: CHARACTER VARYING(255)  from FurniturePiece
-//Column SHAPE: TINYINT from FurnitureTable
+//Column NAME: CHARACTER VARYING(255) from FurniturePiece
+//Column ACCOMODATING_PEOPLE: INTEGER from FurnitureCanSitOn
+//Column COMFY_GRADE: INTEGER from FurnitureCanSitOn
+//Column MATERIAL: TINYINT from FurnitureChair
 		}catch(Exception e){
 			if (tr != null) {
 				tr.rollback();

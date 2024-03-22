@@ -24,7 +24,7 @@
 
         <!-- Mapping for Implicit Polymorphism tests -->
         <mapping class="com.davidauz.hibrntTests.entities.ImplicitPolymorphism.FurnitureSofa"/>
-        <mapping class="com.davidauz.hibrntTests.entities.ImplicitPolymorphism.FurnitureTable"/>
+        <mapping class="com.davidauz.hibrntTests.entities.ImplicitPolymorphism.FurnitureChair"/>
         <mapping class="com.davidauz.hibrntTests.entities.TablePerClass.Ginseng"/>
         <mapping class="com.davidauz.hibrntTests.entities.TablePerClass.Oak"/>
         <mapping class="com.davidauz.hibrntTests.entities.JoinedUnions.Dolphin"/>

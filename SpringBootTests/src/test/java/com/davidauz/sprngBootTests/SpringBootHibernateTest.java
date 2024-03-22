@@ -19,6 +19,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// Spring Boot does everything the other do and some more.
+// No need for configuration files or "class enhancements" (Persistence manager, I am looking at you!)
+// With Spring Boot you only need some annotations and voila', everything works.
+// More or less...
 @EnableAutoConfiguration // this tell Spring Boot to guess and configure beans and various Spring
 // related settings based on the libraries and dependencies included in the project
 @ComponentScan(basePackages = { "com.davidauz.sprngBootTests" })  //yes yes, here is your precious configuration
@@ -31,7 +35,7 @@ public class SpringBootHibernateTest {
 	@PersistenceContext private EntityManager entityManager;
 
 	@Test
-	public void testRepo(){
+	public void testStrategyJoined(){
 		Cat cat = new Cat();
 		cat.setTail_length(5);
 		cat.setVariety(Cat.catVariety.ANGORA);
@@ -66,17 +70,17 @@ public class SpringBootHibernateTest {
 		mammals.stream().forEach(e->{System.out.println(e);});
 
 		String strTables[]=
-				{	"MAMMAL"
-						,	"FELINE"
-						,	"CAT"
-				};
+		{	"MAMMAL"
+		,	"FELINE"
+		,	"CAT"
+		};
 
 		Arrays.stream(strTables).forEach((str)->{
 			String sqlQuery = "SHOW COLUMNS FROM "+str;
 			Query query = entityManager.createNativeQuery(sqlQuery);
 			List<Object[]> columns = query.getResultList();
 			columns.stream()
-					.forEach(c->System.out.println("Table "+str+", Column "+c[0]+": "+c[1]))
+			.forEach(c->System.out.println("Table "+str+", Column "+c[0]+": "+c[1]))
 			;
 		});
 //Table MAMMAL, Column ENVIRON: TINYINT
